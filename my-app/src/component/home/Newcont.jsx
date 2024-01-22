@@ -1,8 +1,7 @@
 
 
-
 import React from 'react'
-import "./Home.css"
+import "./New.css"
 import { MdOutlineFacebook } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
@@ -10,12 +9,13 @@ import { FaInstagram } from "react-icons/fa";
 import { FaLocationArrow } from "react-icons/fa";
 import Footer from '../footer/Footer';
 
-function Content() {
+
+function Newcont() {
+
     return (
         <div>
 
-
-            <div className="content-main">
+            <div className='new-cont-main' >
 
                 <div className="content-text-box-main">
 
@@ -26,7 +26,6 @@ function Content() {
                     </div>
 
                 </div>
-
 
                 <div className="tagline-box-main">
 
@@ -39,45 +38,46 @@ function Content() {
 
                 </div>
 
+                <div className='box' >
 
-                <div className="circel-main-left">
+                    <div className="box-heding-box-main">
 
-                </div>
+                        <p id="text" className="box-text"> <span style={{ color: "rgb(29, 29, 195)" }}> Products </span> Within </p>
 
-                <img className="image-left" src="./Layer 2.png" alt="loding..." />
+                        <p className="box-text"> Your Province</p>
 
+                        <select className="select" name="" id="select">
 
-                <div className="circel-main-right">
-
-
-
-                </div>
-
-                <img className="image-right" src="./Layer 4.png" alt="loding..." />
+                            <option value=""> select pravince </option>
 
 
-                <div className='box'>
+                        </select>
+
+                    </div>
+
+                    <div className="circel-main-left">
+
+                    </div>
+
+                    <img className="image-left" src="./Layer 2.png" alt="loding..." />
+
+                    <div className="circel-main-right">
+
+
+
+                    </div>
+
+                    <img className="image-right" src="./Layer 4.png" alt="loding..." />
+
+
+
+
+
 
                     <img className='cercil-image' src="./Frame 3912.png" alt="" />
 
+                    <div className='  img-cover-div' >
 
-                    <div className='image-under-box' >
-                    </div >
-
-                        <div className="box-heding-box-main">
-
-                            <p id="text" className="box-text"> <span style={{ color: "rgb(29, 29, 195)" }}> Products </span> Within </p>
-
-                            <p className="box-text"> Your Province</p>
-
-                            <select className="select" name="" id="select">
-
-                                <option value=""> select pravince </option>
-
-
-                            </select>
-
-                        </div>
 
                         <div className="container  product-show-main">
 
@@ -89,7 +89,7 @@ function Content() {
                                         <div className="new-box">
 
                                             {/* <p style={{color:"blue",fontSize:"10px",textAlign:"center",fontFamily:"Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"}} >
-                New</p> */}
+New</p> */}
 
                                             <span style={{ color: "blue", fontSize: "10px" }} > New </span>
 
@@ -125,7 +125,7 @@ function Content() {
                                         <div className="new-box">
 
                                             {/* <p style={{color:"blue",fontSize:"10px",textAlign:"center",fontFamily:"Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"}} >
-        New</p> */}
+New</p> */}
 
                                             <span style={{ color: "blue", fontSize: "10px" }} > New </span>
 
@@ -160,7 +160,7 @@ function Content() {
                                         <div className="new-box">
 
                                             {/* <p style={{color:"blue",fontSize:"10px",textAlign:"center",fontFamily:"Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"}} >
-        New</p> */}
+New</p> */}
 
                                             <span style={{ color: "blue", fontSize: "10px" }} > New </span>
 
@@ -196,7 +196,7 @@ function Content() {
                                         <div className="new-box">
 
                                             {/* <p style={{color:"blue",fontSize:"10px",textAlign:"center",fontFamily:"Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"}} >
-        New</p> */}
+New</p> */}
 
                                             <span style={{ color: "blue", fontSize: "10px" }} > New </span>
 
@@ -230,16 +230,6 @@ function Content() {
 
                         </div >
 
-
-
-
-
-
-
-
-
-
-
                         <div className="last-btn-box ">
 
 
@@ -248,7 +238,6 @@ function Content() {
                         </div>
 
                         <p className="last-tag-line"> <span style={{ color: "blue" }}> Cook </span> With Favorite Recipe </p>
-
 
                         <div>
 
@@ -336,25 +325,14 @@ function Content() {
 
 
 
-                   
-
-
-
-                </div >
 
 
 
 
 
+                    </div>
 
-
-
-
-
-
-
-
-            </div >
+                </div>
 
 
 
@@ -363,8 +341,17 @@ function Content() {
 
 
 
-        </div >
+
+
+
+            </div>
+
+
+
+
+
+        </div>
     )
 }
 
-export default Content
+export default Newcont

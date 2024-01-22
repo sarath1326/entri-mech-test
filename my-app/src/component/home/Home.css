@@ -55,17 +55,18 @@
   width:95rem;
   height: 50rem;
   background-image: linear-gradient(to bottom, #b2c0d4, #b6d0da, #c5dddc, #dbe9e0, #f1f4ea);
-  /* background-image: url("../../../public/Frame\ 3912.png"); */
-  /* background-color: aquamarine; */
-  
-  
   border-radius: 50rem 50rem 0 0;
+  margin-top: 100px;
+
  
   }
 
   .cercil-image{
 
   animation: rotation 18s infinite linear;
+  margin-top: 100px;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
     
    
 }
@@ -131,7 +132,7 @@
 
     position: absolute;
     left:300px;
-    top: 350px;
+    top: 450px;
     width: 180px;
     height: 200px;
   }
@@ -140,10 +141,10 @@
   .image-right{
 
     position: absolute;
-    right: 300px;
+    right: 330px;
     width: 180px;
     height: 200px;
-    top: 350px;
+    top: 450px;
      
   }
 
@@ -152,8 +153,9 @@
     width:100%;
     height: 400px;
     /* background-color: rgb(104, 104, 105); */
-    padding-top: 200px;
- 
+    position: absolute;
+    top:700px;
+    
 }
 
 .box-text{
@@ -178,6 +180,7 @@
 
      width: 500px;
      height: 500px;
+     
      /* background-color: rgb(240, 138, 138);
      margin-left: 400px;
      display: flex;

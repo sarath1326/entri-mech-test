@@ -5,10 +5,13 @@ import "./About.css"
 import Nave from '../nave/Nave'
 import { MdOutlineArrowOutward } from "react-icons/md";
 import Footer from '../footer/Footer';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function About() {
+
+    const navigate=useNavigate()
     return (
         <div>
 
@@ -50,7 +53,7 @@ function About() {
                                 It has survived not only five centuries,containing Lorem
                                 Ipsum passages, and more recently.  </p>
 
-                            <button className='about-btn' > Products <  MdOutlineArrowOutward /> </button>
+                            <button className='about-btn' onClick={()=>{navigate("/proview")}}  > Products <  MdOutlineArrowOutward /> </button>
 
 
 

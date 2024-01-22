@@ -30,15 +30,16 @@ function Nave() {
 
                     <div className="navbox-option-mainbox">
 
-                        <span style={{color:"blue"}} className='nave-opt-text'> Home  </span>
-                        <span className='nave-opt-text' onClick={()=>{navigate("/about")}}> About us </span>
-                        <span className='nave-opt-text' onClick={()=>{navigate("/contact")}}> Contact us  </span>
-                        <span className='nave-opt-text'> Cart <div className='cart-cout'> {count} </div>  </span>
-                        <span className='nave-opt-text'> Login  </span>
+                        <span style={{color:"blue"}} className='navbox-opt-text' onClick={()=>{navigate("/")}}  > Home </span>
+                        <span className='navbox-opt-text' onClick={()=>{navigate("/about")}} > About us </span>
+                        <span className='navbox-opt-text' onClick={()=>{navigate("/contact")}} > Contact us </span> 
+                        <span className='navbox-opt-text' > Cart </span>
+                        <div className='cart-cout' >{count} </div>
 
-                        <button onClick={()=>{navigate("/proview")}} className='shop-btn'> Shop  <BiShoppingBag /> </button>
+                        <button className='shop-btn-new' onClick={()=>{navigate("/proview")}}  > Shop <BiShoppingBag /> </button>
 
-                        
+                    
+
 
                     </div>
 

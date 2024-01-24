@@ -12,6 +12,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import {CartContext} from "../../contextapi/Cart"
 import { useContext } from 'react';
 import Footer from '../footer/Footer';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -21,6 +22,7 @@ function View() {
   const {id}=useParams()
   const [res,setres]=useState({})
   const {count,setcount}=useContext(CartContext)
+  const navigate=useNavigate()
   
 
   useEffect(()=>{
@@ -38,6 +40,30 @@ function View() {
 
   },[])
 
+  const cartadd=(proid)=>{
+
+         setcount(count+1)
+         console.log(proid)
+
+         axios.post("https://fakestoreapi.com/carts",{ 
+          
+         userId:1,
+         date:"2020-02-03",
+         products:[{productId:proid,quantity:1}]}
+         
+        
+         ).then((respo)=>{
+
+            console.log("pro add",respo.data)
+         
+          }).catch(err=>{
+
+            console.log("err")
+         })
+         
+        
+          }
+
 
 
   
@@ -48,7 +74,7 @@ function View() {
         <Nave />
         <div className='view-main'>
           <div className='container view-innerbox'>
-            <button className='view-bak-btn' > <FaLongArrowAltLeft />   Back to products </button>
+            <button className='view-bak-btn' onClick={()=>{navigate("/proview")}}  > <FaLongArrowAltLeft />   Back to products </button>
 
             <div className='view-det-main' >
               <div className='view-img-main' >
@@ -91,7 +117,7 @@ function View() {
 
                     <button className='view-b-c-btn' > Buy Now <MdOutlineArrowOutward /> </button>
                     
-                    <button className='view-b-c-btn' onClick={()=>{setcount(count+1)}} > Add Cart <MdOutlineArrowOutward /> </button>
+                    <button className='view-b-c-btn' onClick={()=>(cartadd(res.id))}   > Add Cart <MdOutlineArrowOutward /> </button>
 
                 
               

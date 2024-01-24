@@ -9,37 +9,45 @@ import axios from 'axios';
 
 function Cart() {
 
-  const [show,setShow]=useState([])
-  
+  const [show, setShow] = useState([])
 
-  const profetch = (idarrya) =>{
 
-     return new Promise((resolve, reject) =>{
+  const profetch = (idarrya) => {
 
-      let arrya =[]
+    return new Promise((resolve, reject) => {
 
-         for (let i of idarrya){
+      let arrya = []
 
-       axios(`https://fakestoreapi.com/products/${i.productId}`).then((ret) => {
+      for (let i of idarrya) {
 
-       let obj = {
+        const promise = axios(`https://fakestoreapi.com/products/${i.productId}`).then((ret) => {
 
-          proid:ret.data.id , 
-          title:ret.data.title,
-          price:ret.data.price,
-          image:ret.data.image,
-          quantity: i.quantity
-       
-        }
+          let obj = {
 
-        arrya.push(obj)
-      
+            proid: ret.data.id,
+            title: ret.data.title,
+            price: ret.data.price,
+            image: ret.data.image,
+            quantity: i.quantity
+
+          }
+          // arrya.push(obj)
+          return obj
+        })
+
+        arrya.push(promise)
+      }
+
+      Promise.all(arrya).then((result) => {
+
+        resolve(result)
+      }).catch(err => {
+
+        reject(err)
       })
-    }
-    resolve(arrya)
 
-      })
-  
+    })
+
   }
 
 
@@ -47,24 +55,63 @@ function Cart() {
 
   useEffect(() => {
 
-    axios('https://fakestoreapi.com/carts/1').then((respo) => {
+    axios("https://fakestoreapi.com/carts/user/1").then((respo) => {
 
-      const data = respo.data.products
-      
-      profetch(data).then((result)=>{
+      let arrya = []
+      let mixed = []
 
-        console.log(result)
-        
-        setShow(result)
-        
-       }).catch(err=>{
+      const result = respo.data
 
-          console.log(err)
+
+      for (let i of result) {
+
+        for (let j of i.products) {
+
+          mixed = arrya.concat([...mixed, j])
+        }
+
+
+      }
+
+      console.log(mixed)
+      profetch(mixed).then((resolv) => {
+
+        setShow(resolv)
+
+      }).catch(err => {
+
+        console.log(err)
+
       })
-    
+
+
+
     })
-  
+
+
+
+
   }, [])
+
+
+  const cartCountIncriment = (index) => {
+
+    show[index].quantity += 1
+
+    setShow([...show])
+
+  }
+
+  const cartCountDecrement = (index) => {
+
+    show[index].quantity -= 1
+
+    setShow([...show])
+
+  }
+
+
+
 
   return (
     <div>
@@ -79,8 +126,8 @@ function Cart() {
 
             {
 
-              
-              show.map((obj) => (
+
+              show.map((obj, index) => (
 
                 <div className='cart-data'>
 
@@ -98,7 +145,7 @@ function Cart() {
 
                     <p className='cart-title-head' > Quantity:  {obj.quantity}  </p>
 
-                    <button className='cart-btn' > + </button  >   <button className='cart-btn' > - </button>
+                    <button onClick={() => { cartCountIncriment(index) }} className='cart-btn' > + </button   >   <button onClick={() => { cartCountDecrement(index) }} className='cart-btn' > - </button>
 
                   </div>
 
@@ -109,9 +156,9 @@ function Cart() {
 
               ))
 
-             
 
-              
+
+
             }
 
 
@@ -127,12 +174,17 @@ function Cart() {
 
         </div>
 
+        
 
 
 
 
 
       </div>
+
+     
+
+
 
     </div>
   )

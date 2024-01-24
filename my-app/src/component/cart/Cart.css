@@ -6,7 +6,7 @@
 
 
     width: 100%;
-    height: 1000px;
+    height:2000px ; 
     background-color:rgb(221, 247, 243) ;
 
 }
@@ -42,7 +42,7 @@
 .cart-data{
 
       width: 500px;
-      height: 200px;
+      height: 230px;
       background-color: rgb(126, 123, 117);
       border-radius: 20px;
       margin-top: 20px;
